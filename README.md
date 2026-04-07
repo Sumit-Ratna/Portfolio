@@ -1,16 +1,66 @@
-# React + Vite
+# Sumit Kumar Ratna | Portfolio v1 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance, immersive personal portfolio built to showcase full-stack development and AI/NLP research capabilities. Designed with a focus on cinematic motion, interactive 3D elements, and premium aesthetics.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features & UX
 
-## React Compiler
+- **Cinematic Animations**: Implemented using **GSAP** and **ScrollTrigger** for smooth, pinned-reveal sections and text-tracking motion.
+- **Interactive 3D Elements**: Integration of **Three.js** (via Fiber/Drei) for immersive background components and device mockups.
+- **Glassmorphism & Micro-interactions**: Sleek, modern UI with 3D tilt cards, custom magnetic cursors, and terminal-style reveal bios.
+- **Performance Optimized**: Built with **Vite 8** and **Tailwind 4**, ensuring sub-second load times and efficient asset management.
+- **Smooth Navigation**: Utilizing **Lenis** for high-end scroll physics.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React 19, Vite, Tailwind CSS v4, Lucide & React Icons.
+- **Motion**: GSAP (GreenSock), ScrollTrigger, Lenis Smooth Scroll.
+- **3D/Graphics**: Three.js, React Three Fiber, React Three Drei.
+- **Development**: ESLint, PostCSS.
+
+---
+
+## 📂 Featured Projects
+
+### 🔵 HealthNexus
+*Intelligent Healthcare Ecosystem*
+- **Description**: A Gen-AI powered platform for automated diagnostics, patient record management, and doctor scheduling.
+- **Achievement**: 🥈 **1st Runner-Up** at Gen-AI Hackathon (Feb 2026).
+- **Stack**: React, Node.js, Firebase, Google Gemini API.
+
+### 🟣 NLP Anaphora Resolution
+*Hindi Coreference Resolution Tool*
+- **Description**: A specialized tool using graph algorithms to resolve entity links in the Hindi language.
+- **Tech**: Python, NLP Libraries, Union-Find Algorithms, Regex.
+
+---
+
+
+## 📬 Contact & Socials
+
+- **GitHub:** [@Sumit-Ratna](https://github.com/Sumit-Ratna)
+- **University:** Galgotias University (CSE - AIML)
+
+---
+
+## 🚀 About Me
+
+I’m passionate about building **intelligent systems** and crafting **interfaces that feel alive**.  
+My work focuses on blending **AI-driven logic** with **engaging user experiences**.
+
+---
+
+## 🧠 Interests
+
+- Artificial Intelligence & Machine Learning  
+- System Design & Scalable Architectures  
+- Interactive UI/UX Engineering  
+
+---
+
+## ✨ Signature
+
+> Built with intent by **Sumit Kumar Ratna**
