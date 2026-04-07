@@ -131,15 +131,15 @@ export default function Projects() {
     <section ref={containerRef} className="w-full bg-[#080808] relative z-10" id="projects">
       
       {/* 1. HealthNexus (Pinned Feature) */}
-      <div ref={healthNexusRef} className="min-h-screen lg:h-screen w-full flex items-center justify-center p-4 sm:p-6 lg:p-12 border-t border-white/5 bg-[#080808] py-16 lg:py-0">
-        <div className="container mx-auto flex flex-col lg:flex-row gap-12 items-center">
+      <div ref={healthNexusRef} className="min-h-screen lg:h-screen w-full flex items-center justify-center px-4 py-6 sm:p-6 lg:p-12 border-t border-white/5 bg-[#080808]">
+        <div className="container mx-auto flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
           
           {/* Left Content */}
-          <div className="flex-1 space-y-8">
-            <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-[#2563eb] border-b border-[#2563eb]/30 inline-block pb-2">Featured Project</h2>
-            <h3 className="text-4xl sm:text-5xl md:text-7xl font-black font-display text-white tracking-tighter">HealthNexus</h3>
+          <div className="flex-1 space-y-4 lg:space-y-8 w-full">
+            <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-[#2563eb] border-b border-[#2563eb]/30 inline-block pb-1 sm:pb-2">Featured Project</h2>
+            <h3 className="text-3xl sm:text-5xl md:text-7xl font-black font-display text-white tracking-tighter">HealthNexus</h3>
             
-            <div className="hn-badge inline-flex relative items-center gap-2 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 text-yellow-500 px-4 py-2 rounded-full text-sm font-bold">
+            <div className="hn-badge inline-flex relative items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 text-yellow-500 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold">
               <span>🥈</span> 1st Runner-Up · Gen-AI Hackathon Feb 2026
             </div>
 
@@ -150,29 +150,29 @@ export default function Projects() {
               <div className="overflow-hidden"><div className="hn-desc-line">and patient record management.</div></div>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 lg:gap-3">
               {['React', 'Vite', 'Node.js', 'Express', 'Firebase', 'Gemini API'].map(tech => (
-                <span key={tech} className="hn-tech-chip px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs tracking-wider uppercase text-white/50">
+                <span key={tech} className="hn-tech-chip px-2.5 py-1 lg:px-3 lg:py-1 bg-white/5 border border-white/10 rounded-full text-[10px] lg:text-xs tracking-wider uppercase text-white/50">
                   {tech}
                 </span>
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-3 pt-4 relative z-20">
-              <a href="https://github.com/Sumit-Ratna/HealthNexus" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition-colors pointer-events-auto">
-                <FaGithub size={20} /> GitHub
+            <div className="flex flex-wrap gap-2 sm:gap-3 pt-2 lg:pt-4 relative z-20">
+              <a href="https://github.com/Sumit-Ratna/HealthNexus" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white text-black px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-gray-200 transition-colors pointer-events-auto">
+                <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" /> GitHub
               </a>
-              <a href="https://myhealthnexus.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-transparent border border-white/20 text-white px-6 py-3 rounded-full font-bold hover:bg-white/10 transition-colors pointer-events-auto">
-                <FaExternalLinkAlt size={20} /> Live Demo
+              <a href="https://myhealthnexus.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-transparent border border-white/20 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-white/10 transition-colors pointer-events-auto">
+                <FaExternalLinkAlt className="w-4 h-4 sm:w-5 sm:h-5" /> Live Demo
               </a>
             </div>
           </div>
 
           {/* Right Video Mockup (Tile Hover + Autoplay Video) */}
-          <div className="flex-1 flex justify-center perspective-1000">
-            <TiltCard className="hn-device relative w-[240px] h-[480px] sm:w-[280px] sm:h-[560px] lg:w-[300px] lg:h-[600px] rounded-[3rem] border-[8px] border-[#1a1a1a] !rounded-[3.25rem] bg-black">
+          <div className="flex-1 flex justify-center perspective-1000 w-full mt-4 lg:mt-0">
+            <TiltCard className="hn-device relative w-[160px] h-[320px] sm:w-[240px] sm:h-[480px] lg:w-[300px] lg:h-[600px] rounded-[1.75rem] sm:rounded-[3rem] border-[6px] sm:border-[8px] border-[#1a1a1a] !rounded-[1.75rem] sm:!rounded-[3.25rem] bg-black shadow-2xl flex-shrink-0">
               {/* Dynamic Island Notch */}
-              <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-20"></div>
+              <div className="absolute top-1 lg:top-2 left-1/2 -translate-x-1/2 w-16 h-4 lg:w-24 lg:h-6 bg-black rounded-full z-20"></div>
               
               <iframe 
                 src="https://www.youtube.com/embed/nUoUwYeXNPI?autoplay=1&mute=1&loop=1&playlist=nUoUwYeXNPI&controls=0&modestbranding=1&showinfo=0" 
@@ -189,13 +189,13 @@ export default function Projects() {
       </div>
 
       {/* 2. NLP Anaphora Resolution (Pinned, same animation style as HealthNexus) */}
-      <div ref={nlpRef} className="min-h-screen lg:h-screen w-full flex items-center justify-center p-4 sm:p-6 lg:p-12 border-t border-white/5 bg-[#0a0a0a] py-16 lg:py-0">
-        <div className="container mx-auto flex flex-col lg:flex-row-reverse gap-12 items-center">
+      <div ref={nlpRef} className="min-h-screen lg:h-screen w-full flex items-center justify-center px-4 py-8 sm:p-6 lg:p-12 border-t border-white/5 bg-[#0a0a0a]">
+        <div className="container mx-auto flex flex-col lg:flex-row-reverse gap-6 lg:gap-12 items-center">
           
           {/* Right Content */}
-          <div className="flex-1 space-y-8">
-            <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-[#7c3aed] border-b border-[#7c3aed]/30 inline-block pb-2">Research / Tool</h2>
-            <h3 className="text-4xl sm:text-5xl md:text-7xl font-black font-display text-white tracking-tighter">NLP Anaphora</h3>
+          <div className="flex-1 space-y-4 lg:space-y-8 w-full">
+            <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-[#7c3aed] border-b border-[#7c3aed]/30 inline-block pb-1 sm:pb-2">Research / Tool</h2>
+            <h3 className="text-3xl sm:text-5xl md:text-7xl font-black font-display text-white tracking-tighter">NLP Anaphora</h3>
             
             <div className="text-base sm:text-xl text-white/70 space-y-2 font-light">
               <div className="overflow-hidden"><div className="nlp-desc-line">Resolution tool for Hindi language</div></div>
@@ -204,30 +204,30 @@ export default function Projects() {
               <div className="overflow-hidden"><div className="nlp-desc-line">entity connection tracking.</div></div>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 lg:gap-3">
               {['Python', 'NLP', 'Union-Find', 'Regex'].map(tech => (
-                <span key={tech} className="nlp-tech-chip px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs tracking-wider uppercase text-white/50">
+                <span key={tech} className="nlp-tech-chip px-2.5 py-1 lg:px-3 lg:py-1 bg-white/5 border border-white/10 rounded-full text-[10px] lg:text-xs tracking-wider uppercase text-white/50">
                   {tech}
                 </span>
               ))}
             </div>
             
-            <div className="flex gap-4 pt-4 relative z-20">
-              <a href="https://github.com/Sumit-Ratna/Hindi-Coreference-Resolution" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-full font-bold hover:bg-white/20 transition-colors pointer-events-auto">
-                <FaGithub size={20} /> GitHub
+            <div className="flex gap-3 sm:gap-4 pt-2 lg:pt-4 relative z-20">
+              <a href="https://github.com/Sumit-Ratna/Hindi-Coreference-Resolution" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/10 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-white/20 transition-colors pointer-events-auto">
+                <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" /> GitHub
               </a>
             </div>
           </div>
 
           {/* Left Code Editor (slides in from left) */}
-          <div className="flex-1 perspective-1000 w-full">
-            <TiltCard className="nlp-editor w-full aspect-[4/3] bg-[#0d0d0d] shadow-purple-900/20">
+          <div className="flex-1 perspective-1000 w-full mt-4 lg:mt-0">
+            <TiltCard className="nlp-editor w-full lg:aspect-[4/3] min-h-[260px] bg-[#0d0d0d] shadow-purple-900/20">
               {/* Mac Header */}
-              <div className="h-8 bg-[#1a1a1a] flex items-center px-4 gap-2 border-b border-white/5">
-                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-                <span className="text-white/20 text-xs ml-2 font-mono">anaphora.py</span>
+              <div className="h-6 sm:h-8 bg-[#1a1a1a] flex items-center px-3 sm:px-4 gap-1.5 sm:gap-2 border-b border-white/5">
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/80"></div>
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80"></div>
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/80"></div>
+                <span className="text-white/20 text-[10px] sm:text-xs ml-1 sm:ml-2 font-mono">anaphora.py</span>
               </div>
               
               {/* Code visual */}

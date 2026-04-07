@@ -4,6 +4,7 @@ import { Html } from '@react-three/drei'
 import * as THREE from 'three'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -172,23 +173,87 @@ function OrbCluster() {
 }
 
 export default function Skills() {
+  const [isMobile, setIsMobile] = useState(false)
+  const mobileContainerRef = useRef(null)
+  
+  // Track window resizing to seamlessly switch between 3D Canvas and HTML layout
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile() // initial check
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  useGSAP(() => {
+    // Only animate the mobile layout when active
+    if (isMobile && mobileContainerRef.current) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: mobileContainerRef.current,
+          start: 'top 85%',
+        }
+      })
+      
+      // Slide in skill categories
+      tl.fromTo('.mobile-skill-group',
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, stagger: 0.15, duration: 0.6, ease: 'power2.out' }
+      )
+      
+      // Pop in individual tech chips sequentially
+      tl.fromTo('.mobile-skill-chip',
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 1, stagger: 0.05, duration: 0.4, ease: 'back.out(1.5)' },
+        "-=0.4"
+      )
+    }
+  }, { scope: mobileContainerRef, dependencies: [isMobile] })
+
   return (
     // Slightly desaturated dark background to let emissive elements pop
-    <section className="relative w-full h-[80vh] sm:h-[100vh] lg:h-[120vh] bg-[#050505] border-t border-white/5" id="skills">
+    <section className={`relative w-full ${isMobile ? 'min-h-screen py-16' : 'h-[80vh] sm:h-[100vh] lg:h-[120vh]'} bg-[#050505] border-t border-white/5 overflow-hidden`} id="skills">
       
-      <div className="absolute top-24 left-0 w-full text-center z-10 pointer-events-none">
+      <div className={`absolute left-0 w-full text-center z-10 pointer-events-none ${isMobile ? 'top-10 relative mb-12' : 'top-24 mt-0'}`}>
         <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-[#d97706] mb-4">Arsenal & Technologies</h2>
         <h3 className="text-4xl sm:text-5xl md:text-7xl font-black font-display text-white/5 uppercase tracking-tighter">
-          Skill Orbs
+          {isMobile ? 'Tech Stack' : 'Skill Orbs'}
         </h3>
-        <p className="text-white/30 uppercase tracking-widest text-xs mt-4">Interact to inspect elements</p>
+        <p className="text-white/30 uppercase tracking-widest text-xs mt-4">
+          {isMobile ? 'Core Competencies' : 'Interact to inspect elements'}
+        </p>
       </div>
 
-      <div className="absolute inset-0 z-0" aria-hidden="true">
-        <Canvas camera={{ position: [0, 0, 14], fov: 60 }}>
-          <OrbCluster />
-        </Canvas>
-      </div>
+      {!isMobile ? (
+        <div className="absolute inset-0 z-0" aria-hidden="true">
+          <Canvas camera={{ position: [0, 0, 14], fov: 60 }}>
+            <OrbCluster />
+          </Canvas>
+        </div>
+      ) : (
+        <div ref={mobileContainerRef} className="relative z-10 px-6 sm:px-12 flex flex-col gap-10 w-full max-w-md mx-auto pointer-events-auto mt-4">
+          {skillsData.map((group, idx) => (
+            <div key={idx} className="mobile-skill-group flex flex-col gap-4">
+              <h4 className="text-sm font-bold tracking-[0.2em] uppercase border-b border-white/10 pb-2" style={{ color: group.color, textShadow: `0 0 10px ${group.color}40` }}>
+                {group.group}
+              </h4>
+              <div className="flex flex-wrap gap-3">
+                {group.labels.map((label, lblIdx) => (
+                  <div 
+                    key={lblIdx} 
+                    className="mobile-skill-chip px-5 py-2.5 rounded-full text-xs font-bold text-white bg-white/5 backdrop-blur-md" 
+                    style={{ 
+                      boxShadow: `0 4px 15px ${group.color}15`, 
+                      border: `1px solid ${group.color}30` 
+                    }}
+                  >
+                    {label}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
 
     </section>
   )
