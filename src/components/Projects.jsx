@@ -162,7 +162,7 @@ export default function Projects() {
               <a href="https://github.com/Sumit-Ratna/HealthNexus" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition-colors pointer-events-auto">
                 <FaGithub size={20} /> GitHub
               </a>
-              <a href="https://health-nexus-nine.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-transparent border border-white/20 text-white px-6 py-3 rounded-full font-bold hover:bg-white/10 transition-colors pointer-events-auto">
+              <a href="https://myhealthnexus.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-transparent border border-white/20 text-white px-6 py-3 rounded-full font-bold hover:bg-white/10 transition-colors pointer-events-auto">
                 <FaExternalLinkAlt size={20} /> Live Demo
               </a>
             </div>
