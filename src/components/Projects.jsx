@@ -162,7 +162,7 @@ export default function Projects() {
               <a href="https://github.com/Sumit-Ratna/HealthNexus" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white text-black px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-gray-200 transition-colors pointer-events-auto">
                 <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" /> GitHub
               </a>
-              <a href="https://myhealthnexus.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-transparent border border-white/20 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-white/10 transition-colors pointer-events-auto">
+              <a href="https://myhealthnexus.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-blue-600/10 border border-blue-600/40 text-blue-500 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-blue-600/20 transition-colors pointer-events-auto">
                 <FaExternalLinkAlt className="w-4 h-4 sm:w-5 sm:h-5" /> Live Demo
               </a>
             </div>
@@ -213,7 +213,7 @@ export default function Projects() {
             </div>
             
             <div className="flex gap-3 sm:gap-4 pt-2 lg:pt-4 relative z-20">
-              <a href="https://github.com/Sumit-Ratna/Hindi-Coreference-Resolution" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/10 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-white/20 transition-colors pointer-events-auto">
+              <a href="https://github.com/Sumit-Ratna/Hindi-Coreference-Resolution" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white text-black px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-gray-200 transition-colors pointer-events-auto">
                 <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" /> GitHub
               </a>
             </div>
