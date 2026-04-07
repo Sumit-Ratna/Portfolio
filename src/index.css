@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base: #080808;
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+:root {
+  background-color: var(--color-base);
+  color: white;
+  font-family: var(--font-body);
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #080808;
+}
+
+/* ── Skip Link (Accessibility) ── */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: #7c3aed;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 0 0 12px 12px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: top 0.3s ease;
+  cursor: pointer !important;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* ── Hide native cursor globally ── */
+*, *::before, *::after {
+  cursor: none !important;
+}
+
+/* Re-enable default cursor for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    cursor: auto !important;
+  }
+}
+
+/* Touch devices — re-enable native cursor */
+@media (hover: none) and (pointer: coarse) {
+  *, *::before, *::after {
+    cursor: auto !important;
+  }
+  .cursor-dot, .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* ── Reduced Motion: disable ALL animations ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .cursor-dot, .cursor-ring {
+    display: none !important;
+  }
+  .film-grain {
+    display: none !important;
+  }
+}
+
+/* ── Film Grain Overlay ── */
+.film-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* ── Loader ── */
+.loader {
+  background-color: #080808;
+}
+
+/* ── Scrollbar Hide ── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Selection styling ── */
+::selection {
+  background-color: rgba(124, 58, 237, 0.4);
+  color: white;
+}
